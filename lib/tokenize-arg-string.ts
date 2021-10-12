@@ -32,10 +32,27 @@ export function tokenizeArgString (argString: string | any[]): string[] {
 
     // don't split the string if we're in matching
     // opening or closing single and double quotes.
-    if (c === opening) {
+    let escaped = false
+    if (ii > 0) {
+      const previousCharacterIndex = ii - 1
+      const previousCharacter = argString.charAt(previousCharacterIndex)
+      escaped = previousCharacter === '\\'
+    }
+    if (c === opening && !escaped) {
       opening = null
+      continue
     } else if ((c === "'" || c === '"') && !opening) {
       opening = c
+      continue
+    }
+    // only include slashes if they are not escaping the quotes we're
+    // currently inside
+    let nextCharacter = null
+    if (ii < argString.length - 1) {
+      nextCharacter = argString.charAt(ii + 1)
+    }
+    if (c === '\\' && nextCharacter === opening) {
+      continue
     }
 
     if (!args[i]) args[i] = ''

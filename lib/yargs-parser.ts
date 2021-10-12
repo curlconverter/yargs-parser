@@ -218,6 +218,7 @@ export class YargsParser {
       let next: string
       let value: string
 
+      if (!arg) continue
       // any unknown option (except for end-of-options, "--")
       if (arg !== '--' && isUnknownOptionAsArg(arg)) {
         pushPositional(arg)
