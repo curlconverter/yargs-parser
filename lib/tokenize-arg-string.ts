@@ -43,6 +43,8 @@ export function tokenizeArgString (argString: string | any[]): string[] {
       continue
     } else if ((c === "'" || c === '"') && !opening) {
       opening = c
+      if (!args[i])
+        args[i] = '';
       continue
     }
     // only include slashes if they are not escaping the quotes we're
