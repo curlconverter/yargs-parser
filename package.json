@@ -1,7 +1,7 @@
 {
-  "name": "yargs-parser",
-  "version": "20.2.9",
-  "description": "the mighty option parser used by yargs",
+  "name": "@curlconverter/yargs-parser",
+  "version": "0.0.1",
+  "description": "a fork of the mighty option parser used by yargs",
   "main": "build/index.cjs",
   "exports": {
     ".": [
@@ -31,20 +31,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yargs/yargs-parser.git"
+    "url": "git+https://github.com/curlconverter/yargs-parser.git"
   },
-  "keywords": [
-    "argument",
-    "parser",
-    "yargs",
-    "command",
-    "cli",
-    "parsing",
-    "option",
-    "args",
-    "argument"
-  ],
-  "author": "Ben Coe <ben@npmjs.com>",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.2.11",
@@ -83,5 +72,6 @@
     "ignore": [
       "build"
     ]
-  }
+  },
+  "homepage": "https://github.com/curlconverter/yargs-parser"
 }
